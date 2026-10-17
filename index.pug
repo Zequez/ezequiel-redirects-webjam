@@ -71,10 +71,6 @@ mixin Page(name)
       span[absolute block inset-0 top-0 animate-dots-2] ..
       span[absolute block inset-0 top-0 animate-dots-1] .
 
-  div.fallback[
-    hidden px-3 py2 text-5 whitespace-nowrap
-    bg-linear-to-t bg-white from-black/5 lh-8 rounded-1 shadow-sm
-  ] El link que buscas no está aquí
 
   mixin URL(id, label, url)
     a[block hidden px-2 text-center text-white bg-gray-900 rounded-1 hover:bg-gray-800](href=url id=id)
@@ -83,3 +79,8 @@ mixin Page(name)
   
   +URL('web-mates-club', 'Web y Mates Club', 'https://webmatesclub.ezequielschwartzman.org')
   +URL('test', 'Test', 'https://ezequielschwartzman.org')
+
+  div.fallback[
+    hidden px-3 py2 text-5 whitespace-nowrap
+    bg-linear-to-t bg-white from-black/5 lh-8 rounded-1 shadow-sm
+  ] El link que buscas no está aquí
