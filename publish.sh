@@ -20,4 +20,4 @@ gh-pages -d www -b www
 
 echo "DONE."
 read -rp "Press Enter to close this window..."
-exit
+osascript -e 'tell application "Terminal" to close front window'
