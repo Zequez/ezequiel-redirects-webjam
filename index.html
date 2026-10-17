@@ -1,0 +1,55 @@
+<!DOCTYPE html><html><head><link rel="stylesheet" href="style.css"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Cargando tu destino...</title><style>@keyframes dots-1 {
+  0%, 33% { opacity: 1 }
+  34%, 100% { opacity: 0 }
+}
+
+@keyframes dots-2 {
+  0%, 33% { opacity: 0 }
+  34%, 66% { opacity: 1 }
+  67%, 100% { opacity: 0 }
+}
+
+@keyframes dots-3 {
+  0%, 66% { opacity: 0 }
+  67%, 100% { opacity: 1 }
+}
+
+.grid1 {
+  background-size: 1.5rem 1.5rem;
+  background-image:
+    linear-gradient(to right, #fff2 1px, transparent 1px),
+    linear-gradient(to bottom, #fff2 1px, transparent 1px);
+}
+
+.animate-dots-1 { animation: dots-1 1.5s steps(1) infinite }
+.animate-dots-2 { animation: dots-2 1.5s steps(1) infinite }
+.animate-dots-3 { animation: dots-3 1.5s steps(1) infinite }
+
+a:target {
+  display: block;
+}
+
+body:not(:has(a:target)) .fallback {
+  display: block;
+}
+
+body:has(a:target) .loading {
+  display: block;
+}
+</style></head><body class="flex-cc flex-col grid1 gap-4 h-screen px4 font-mono bg-sky-600"><div class="loading 
+    hidden px-3 py1 text-5 whitespace-nowrap
+    bg-linear-to-t bg-white from-black/5 lh-8 rounded-1 shadow-sm
+  ">Cargando tu destino<span class="inline-block relative h-6 w-8"><span class="absolute block inset-0 top-0 animate-dots-3">...</span><span class="absolute block inset-0 top-0 animate-dots-2">..</span><span class="absolute block inset-0 top-0 animate-dots-1">.</span></span></div><div class="fallback 
+    hidden px-3 py2 text-5 whitespace-nowrap
+    bg-linear-to-t bg-white from-black/5 lh-8 rounded-1 shadow-sm
+  ">El link que buscas no est&#xe1; aqu&#xed;</div><a class="block hidden px-2 text-center text-white bg-gray-900 rounded-1 hover:bg-gray-800" href="https://webmatesclub.ezequielschwartzman.org" id="web-mates-club"><div>Web y Mates Club</div><div>https://webmatesclub.ezequielschwartzman.org</div></a><a class="block hidden px-2 text-center text-white bg-gray-900 rounded-1 hover:bg-gray-800" href="https://ezequielschwartzman.org" id="test"><div>Test</div><div>https://ezequielschwartzman.org</div></a><script>console.log('HEY');
+const id = document.location.hash.slice(1);
+
+const a = document.getElementById(id);
+console.log(a);
+if (a) {
+  const destiny = a.getAttribute('href');
+  console.log("Destino encontrado!", destiny)
+  document.location.replace(destiny)
+}
+</script></body></html>
