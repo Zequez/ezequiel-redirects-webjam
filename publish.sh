@@ -19,4 +19,3 @@ git push --all origin
 gh-pages -d www -b www
 
 echo "DONE."
-read -rp "Press Enter to close this window..."
