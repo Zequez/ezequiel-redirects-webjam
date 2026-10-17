@@ -19,5 +19,3 @@ git push --all origin
 gh-pages -d www -b www
 
 echo "DONE."
-read -rp "Press Enter to close this window..."
-osascript -e 'tell application "Terminal" to close front window'
