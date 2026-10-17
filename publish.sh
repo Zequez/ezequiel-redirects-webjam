@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+cd "$(dirname "$0")"
 set -e
 
 git rev-parse --git-dir >/dev/null 2>&1 || git init
@@ -18,3 +19,4 @@ git push --all origin
 gh-pages -d www -b www
 
 echo "DONE."
+read -rp "Press Enter to close this window..."
